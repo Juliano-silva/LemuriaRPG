@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  body{
+    background-color: black;
+    color: white;
+  }
+  
+  
+body::-webkit-scrollbar{
+  width: 0px;
+}
+
+  button{
+    display: block;
+    width: 20vh;
+    padding: 2vh;
+    margin-top: 1vh;
+  }
+  
+  #Criar{
+    display: none;
+  }
+
+  iframe{
+    width: 100%;
+    height: 100vh;
+  }
+  
+#Sidebar{
+  border: 0.2vh solid white;
+  top: 0;
+  position: fixed;
+  right: 0;
+  height: 100%;
+  background-color: rgb(6, 6, 80);
+  width: 20vh;
+}
+
+#Sidebar > a{
+  text-decoration: none;
+  color: white;
+  display: block;
+  margin: auto;
+  text-align: center;
+  padding: 2vh;
+}

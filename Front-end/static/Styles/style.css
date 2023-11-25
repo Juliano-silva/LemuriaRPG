@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    color: white;
+}
+
+/* Batalha */
+.Container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.Personagem{
+    border: 0.2vh solid white;    
+    text-align: center;
+}
+
+.Personagem > img{
+    width: 60vh;
+    height: 60vh;
+}
+
+/* Fazenda */
+.Criation{
+    border: 0.2vh solid transparent;
+    height: 100vh;
+    text-align: center;
+    display: none;
+}
+
+
+.Criation > img{
+    width: 50vh;
+    display: block;
+    margin: auto;
+}
+
+.FazendaBtn{
+    all: unset;
+    border: 0.2vh solid transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 2vh;
+    font-size: 5vh;
+}
+
+/* Shop */
+#BuscarBody{
+    display: flex;
+    align-items: center;
+    margin-top: 2vh;
+}
+#Caixa{
+    border: 0.2vh solid goldenrod;
+    background-image: url('../files/BackgroundShop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 55vh;
+    height: 45vh;
+    margin-left: 1vh;
+    padding: 2vh;
+    color: goldenrod;
+    text-shadow: 0.1vh 0.1vh 0.1vh gold;
+}
+
+#Caixa > img{
+    width: 40%;
+    height: 40%;
+    border: 0.4vh solid goldenrod;
+    margin-left: 2vh;
+    z-index: 0;
+}
+
+/* Config */
+#Conteudo > img{
+    display: block;
+    margin: auto;
+    width: 40%;
+    height: 40%;
+}

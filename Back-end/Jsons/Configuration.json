@@ -1,0 +1,19 @@
+{
+    "Status":[
+        "Força",
+        "Destreza",
+        "Constituição",
+        "Sabedoria",
+        "Agilidade",
+        "Carisma",
+        "Sorte",
+        "Vontade"
+    ],
+    "Equipamentos":[
+        "Arma",
+        "Magia",
+        "Equipamento",
+        "Skill",
+        "Trocar de Forma"
+    ] 
+}
