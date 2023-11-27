@@ -5,12 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Mods</title>
     <link rel="stylesheet" href="../static/Styles/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
+    <input type="text" id="UrlImg" placeholder="Adicionar Background">
     <input type="file" placeholder="Adicionar Sprites">
     <input type="file" placeholder="Adicionar Music">
     <input type="file" placeholder="Adicionar Scenario">
-    <button>Add</button>
+    <button onclick="SalvarURL()">Baixar</button>
+    <h1>Backgrounds</h1>
+    <div id="Conteudo"></div>
+    <h1>Music</h1>
+    <div id="ConteudoMusic"></div>
 </body>
 <script src="../static/Scripts/Mods.js"></script>
 </html>

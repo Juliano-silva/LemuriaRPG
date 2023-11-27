@@ -6,6 +6,26 @@ body{
     color: white;
 }
 
+button,input,textarea{
+    all: unset;
+    display: block;
+    margin: auto;
+    border: 0.2vh solid yellow;
+    padding: 2vh;
+    font-size: 2vh;
+    width:10%;
+    text-align: center;
+    border-radius: 2vh;
+    margin-top: 1vh;
+    background-color: rgb(41, 21, 7);
+}
+input,textarea{
+    width: 30%;
+}
+
+::placeholder{
+    color: white;
+}
 /* Batalha */
 .Container{
     display: flex;
@@ -49,6 +69,14 @@ body{
     font-size: 5vh;
 }
 
+#FazendaPersonagens{
+    display: none;
+}
+
+#Created{
+    border: 0.2vh solid white;
+    margin-top: 10vh;
+}
 /* Shop */
 #BuscarBody{
     display: flex;

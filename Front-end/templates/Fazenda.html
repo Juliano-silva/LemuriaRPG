@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fazenda</title>
     <link rel="stylesheet" href="../static/Styles/style.css">
 </head>
+
 <body>
     <div class="FazendaBody">
-        <button onclick="Mudar()" class="FazendaBtn" >chocar o Ovo</button>
-       <div id='Criation' class="Criation">
-       <h1>Fazenda</h1>
-        <h1 id='Name'></h1>
-        <img id='PetGerar' src="../static/files/Ovo.png" alt="" />
-        <button onclick="Metamorfose()">Abrir</button>
-       </div>
+        <button onclick="Mudar()" class="FazendaBtn">chocar o Ovo</button>
+        <div id='Criation' class="Criation">
+            <h1>Fazenda</h1>
+            <button id="Meta" onclick="Metamorfose()">Criar um Laço</button>
+            <img id='PetGerar' src="../static/files/Ovo.png" alt="" />
+            <div id="FazendaPersonagens">
+                <h1 id='Name'></h1>
+                <input type="text" placeholder="Trocar Name" onchange="Trocar_Laço()"  id="NamePersonagem">
+                <input type="text" id="ImgPersonagem" onchange="Trocar_Laço()" placeholder="Trocar Imagem">
+                <button onclick="SalvarLaço()">Salvar o Laço</button>
+            </div>
+        </div>
+        <div id="Created"></div>
     </div>
 </body>
 <script src="../static/Scripts/Fazenda.js"></script>
+
 </html>

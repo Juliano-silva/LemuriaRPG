@@ -14,6 +14,52 @@
         "Magia",
         "Equipamento",
         "Skill",
-        "Trocar de Forma"
-    ] 
+        "Forma"
+    ],
+    "Atribute":[
+        {
+            "id":0,
+            "Name": "Water"
+        },
+        {
+            "id":1,
+            "Name": "Fire"
+        },
+        {
+            "id":2,
+            "Name": "Earth"
+        },
+        {
+            "id":3,
+            "Name": "Air"
+        },
+        {
+            "id":4,
+            "Name": "Electricity"
+        },
+        {
+            "id":5,
+            "Name": "Light"
+        },
+        {
+            "id":6,
+            "Name": "Shadow"
+        },
+        {
+            "id":7,
+            "Name": "Beast"
+        },
+        {
+            "id":8,
+            "Name": "Mind"
+        },
+        {
+            "id":9,
+            "Name": "Flora"
+        },
+        {
+            "id":10,
+            "Name": "Cosmic"
+        }
+    ]
 }

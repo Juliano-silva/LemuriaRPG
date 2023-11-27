@@ -16,9 +16,13 @@ function Add() {
   array.push({
     "Name": document.getElementById("Personagem").value,
     "ImagePersonagem": document.getElementById("PersonagemImg").value,
-    "Laço": document.getElementById("Laço").value,
-    "ImageLaço": document.getElementById("LaçoImg").value,
-    "Itens":[]
+    "Sintonia": document.getElementById("Sintonia").value,
+    "Laço":[],
+    "Arma": [],
+    "Magia": [],
+    "Equipamento": [],
+    "Skill": [],
+    "Forma": [],
   })
 
   localStorage.Avatar = JSON.stringify(array)
@@ -41,3 +45,16 @@ function ContadorPoint(){
     })
   })
 }
+
+function SintoniaFunc(){
+  fetch("/Data").then((response) => {
+    response.json().then((data) => {
+      for(var i = 0 ; i < data.Atribute.length;i++){
+        var Option = document.createElement("option")
+        Option.innerText = Option.value = data.Atribute[i].Name
+        document.getElementById("Sintonia").append(Option)
+      }
+    })})
+}
+
+document.onload = SintoniaFunc()
