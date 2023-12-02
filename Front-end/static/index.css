@@ -5,6 +5,9 @@
   
   body{
     background-color: black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: white;
   }
   
@@ -30,20 +33,49 @@ body::-webkit-scrollbar{
   }
   
 #Sidebar{
-  border: 0.2vh solid white;
   top: 0;
   position: fixed;
   right: 0;
   height: 100%;
-  background-color: rgb(6, 6, 80);
-  width: 20vh;
+  background: radial-gradient(151.92% 127.02% at 15.32% 21.04%, rgba(165, 239, 255, 0.20) 0%, rgba(110, 191, 244, 0.04) 77.08%, rgba(70, 144, 212, 0.00) 100%);
+  backdrop-filter: blur(2.6vh);
+  width: 18vh;
+  display: none;
 }
 
 #Sidebar > a{
+  color: rgb(255, 255, 36);
   text-decoration: none;
-  color: white;
   display: block;
   margin: auto;
+  font-size: 2vh;
   text-align: center;
   padding: 2vh;
+  cursor: pointer;
+}
+
+#BtnSidebarAbir,#BtnSidebarFechar{
+  all: unset;
+  color: white;
+  position: fixed;
+  padding-right: 1vh;
+  cursor: pointer;
+  font-size: 4vh;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  text-align: right;
+}
+
+#BtnSidebarAbir{
+  display: block;
+}
+#BodyOpacity{
+  background: rgba(0, 0, 0, 0.77);
+  filter: opacity(98%);
+  top: 0;
+  z-index: -1;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
 }

@@ -9,16 +9,20 @@
 </head>
 
 <body>
-    <h1>Shop</h1>
-    <input type="text" id="Name" placeholder="Nome do Item" />
-    <textarea id="Description" placeholder="Descrição do Item"></textarea>
-    <input type="text" id="Image" placeholder="Image do Item" />
-    <input type="number" id="Preco" placeholder="Preço do Item" />
-    <select id="Selecionar"></select>
-    <div id="Criar"></div>
-    <button onclick="Salvar()">Salvar</button>
+    <button id="Add_Button">+</button>
+    <h1>Dinheiro Atual: <span id="Dinheiro"></span></h1>
+    <h2>Components atuais: <span id="Components"></span></h2>
+    <div id="Adicionar_Conteudo">
+        <input type="text" id="Name" placeholder="Nome do Item" />
+        <textarea id="Description" placeholder="Descrição do Item"></textarea>
+        <input type="text" id="Image" placeholder="Image do Item" />
+        <input type="number" id="Preco" placeholder="Preço do Item" />
+        <select id="Selecionar"></select>
+        <div id="Criar"></div>
+        <button onclick="Salvar()">Salvar</button>
+    </div>
     <div id="BuscarBody"></div>
 </body>
 <script src="../static/Scripts/Shop.js"></script>
-
+<script src="../static/Scripts/Padrão.js"></script>
 </html>

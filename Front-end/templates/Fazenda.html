@@ -10,10 +10,11 @@
 
 <body>
     <div class="FazendaBody">
-        <button onclick="Mudar()" class="FazendaBtn">chocar o Ovo</button>
+        <button onclick="Mudar()" id="Add_Button" class="FazendaBtn">+</button>
+        <div id="Adicionar_Conteudo">
         <div id='Criation' class="Criation">
-            <h1>Fazenda</h1>
             <button id="Meta" onclick="Metamorfose()">Criar um Laço</button>
+            <h1>chocar o Ovo</h1>
             <img id='PetGerar' src="../static/files/Ovo.png" alt="" />
             <div id="FazendaPersonagens">
                 <h1 id='Name'></h1>
@@ -22,9 +23,10 @@
                 <button onclick="SalvarLaço()">Salvar o Laço</button>
             </div>
         </div>
+    </div>
         <div id="Created"></div>
     </div>
 </body>
 <script src="../static/Scripts/Fazenda.js"></script>
-
+<script src="../static/Scripts/Padrão.js"></script>
 </html>

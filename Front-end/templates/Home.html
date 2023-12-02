@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="../static/Styles/style.css">
 </head>
+
 <body>
-    <div id="Set_Create"></div>
-    <div id="Inputs">
-        <label>Laço</label> <select id="Laço"></select>
-        <label>Armas</label> <select id="Arma"></select>
-        <label>Magia 1 </label> <select id="Magia1"></select>
-        <label>Magia 2 </label> <select id="Magia2"></select>
-        <label>Magia 3 </label> <select id="Magia3"></select>
-        <label>Magia 4 </label> <select id="Magia4"></select>
-        <label>Equipamento</label> <select id="Equipamento"></select>
-        <label>Skill</label> <select id="Skill"></select>
-        <label>Forma</label> <select id="Forma"></select>
+    <button id="Add_Button">+</button>
+    <div id="Adicionar_Conteudo">
+        <input type="text" placeholder="Nome do Personagem: " id="Personagem" />
+        <input type="text" placeholder="Image do Personagem: " id="PersonagemImg" />
+        <select id="Sintonia"></select>
+        <h1>Você pode usar <span id="Points"></span> pontos</h1>
+        <div id="Criar"></div>
+        <button id="Salvar">Salvar</button>
+        <button onclick="Add()">Adicionar</button>
     </div>
+    <div id="Set_Create"></div>
+   <div id="Inputs">
+    <label>Laço</label> <select id="Laço"></select>
+    <label>Armas</label> <select id="Arma"></select>
+    <label>Magia 1 </label> <select id="Magia1"></select>
+    <label>Magia 2 </label> <select id="Magia2"></select>
+    <label>Magia 3 </label> <select id="Magia3"></select>
+    <label>Magia 4 </label> <select id="Magia4"></select>
+    <label>Equipamento</label> <select id="Equipamento"></select>
+    <label>Skill</label> <select id="Skill"></select>
+    <label>Forma</label> <select id="Forma"></select>
+    <button onclick="ItensSalvos()">Salvar</button>
+   </div>
+   <div id="Atributos"></div>
 </body>
+    </div>
 <script src="../static/Scripts/Home.js"></script>
+<script src="../static/Scripts/Padrão.js"></script>
 </html>

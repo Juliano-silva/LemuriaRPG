@@ -1,7 +1,7 @@
 from flask import *
+from werkzeug.utils import secure_filename
 import urllib.request,ctypes,random,os,glob
 app = Flask(__name__,template_folder="../Front-end/templates",static_folder="../Front-end/static")
-
 # Folders
 Backgrounds = "C:\\Users\\sustu\\OneDrive\\Imagens\\Programação\\Projetos com diferentes linguagens\\LemuriaRPG\\Back-end\\Mods\\Backgrounds"
 BackgroundsR = r"C:\\Users\\sustu\\OneDrive\\Imagens\\Programação\\Projetos com diferentes linguagens\\LemuriaRPG\\Back-end\\Mods\\Backgrounds"
@@ -16,6 +16,7 @@ Cenario = "C:\\Users\\sustu\\OneDrive\\Imagens\\Programação\\Projetos com dife
 CenarioR = r"C:\\Users\\sustu\\OneDrive\\Imagens\\Programação\\Projetos com diferentes linguagens\\LemuriaRPG\\Back-end\\Mods\\Cenários"
 
 JsonFolder = "C:\\Users\\sustu\\OneDrive\\Imagens\\Programação\\Projetos com diferentes linguagens\\LemuriaRPG\\Back-end\\Jsons\\ModsSalvar.json"
+
 # Routes
 @app.route("/",methods=['GET','POST'])
 def index():
@@ -29,10 +30,6 @@ def home():
 def Batalhas():
     return render_template("Batalhas.html")
 
-@app.route("/Add",methods=['GET','POST'])
-def Add():
-    return render_template("Add.html")
-
 @app.route("/Fazenda",methods=['GET','POST'])
 def Fazenda():
     return render_template("Fazenda.html")
@@ -40,8 +37,6 @@ def Fazenda():
 @app.route("/Shop",methods=['GET','POST'])
 def Shop():
     return render_template("Shop.html")
-
-
 @app.route("/Mods",methods=['GET','POST'])
 def Mods():
     Galeria = list(filter(os.path.isfile,glob.glob(Backgrounds + "\\*")))
@@ -98,10 +93,33 @@ def SearchMusic(filename):
 def SearchMods(filename):
     return send_from_directory(Backgrounds + "\\",filename)
 
+@app.route("/SpriteAdd",methods=["GET","POST"])
+def SpriteAdd():
+    file = request.files['AddSprites']
+    savePath = os.path.join(os.path.join(os.getcwd(),Sprite),secure_filename(file.filename))
+    file.save(savePath)
+    return '',201
+
+@app.route("/CenarioAdd",methods=["GET","POST"])
+def CenarioAdd():
+    file = request.files['CenarioAdd']
+    savePath = os.path.join(os.path.join(os.getcwd(),Cenario),secure_filename(file.filename))
+    file.save(savePath)
+    return '',201
+
+@app.route("/MusicAdd",methods=["GET","POST"])
+def MusicAdd():
+    file = request.files['MusicAdd']
+    savePath = os.path.join(os.path.join(os.getcwd(),Music),secure_filename(file.filename))
+    file.save(savePath)
+    return '',201
+
 @app.route("/Name",methods=["GET","POST"])
 def Name():
     with open("C:/Users/sustu/OneDrive/Imagens/Programação/Projetos com diferentes linguagens/LemuriaRPG/Back-end/Jsons/Names.json",encoding="utf-8") as meu_json:
         dados = json.load(meu_json)
         return jsonify(dados)
+    
+
 if __name__ == "__main__":
     app.run(debug=True,port=1245)

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +9,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <input type="text" id="UrlImg" placeholder="Adicionar Background">
-    <input type="file" placeholder="Adicionar Sprites">
-    <input type="file" placeholder="Adicionar Music">
-    <input type="file" placeholder="Adicionar Scenario">
-    <button onclick="SalvarURL()">Baixar</button>
-    <h1>Backgrounds</h1>
+    <button id="Add_Button">+</button>
+    <div id="Adicionar_Conteudo">
+        <input type="text" id="UrlImg" placeholder="Adicionar Background">
+        <button onclick="SalvarURL()">Baixar</button>
+        <form action="/SpriteAdd" method="post" enctype="multipart/form-data">
+            <input type="file" accept="image/*" id="AddSprites" name="AddSprites">
+            <button>Enviar</button>
+        </form>
+        <form action="/CenarioAdd" method="post" enctype="multipart/form-data">
+            <input type="file" accept="image/*" id="CenarioAdd" name="CenarioAdd">
+            <button>Enviar</button>
+        </form>
+        <form action="/MusicAdd" method="post" enctype="multipart/form-data">
+            <input type="file" accept="audio/*" id="MusicAdd" name="MusicAdd">
+            <button>Enviar</button>
+        </form>
+    </div>
     <div id="Conteudo"></div>
-    <h1>Music</h1>
-    <div id="ConteudoMusic"></div>
 </body>
 <script src="../static/Scripts/Mods.js"></script>
+<script src="../static/Scripts/Padrão.js"></script>
+
 </html>
