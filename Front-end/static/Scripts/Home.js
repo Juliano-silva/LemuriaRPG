@@ -155,16 +155,16 @@ function SintoniaFunc() {
 
 function ItensSalvos() {
     var Avatar = JSON.parse(localStorage.getItem("Avatar"))
-    Avatar[0].Arma = Arma.value || "Espada de Madeira"
-    Avatar[0].Equipamento = Equipamento.value || "Elmo de Madeira"
-    Avatar[0].Forma = Forma.value || "Nenhuma Forma"
-    Avatar[0].LVL = "0" || "0"
-    Avatar[0].Laço = Laço.value || "Nenhum Laço"
-    Avatar[0].Magia1 = Magia1.value || "Bola de Fogo Padrão"
-    Avatar[0].Magia2 = Magia2.value || "Bola de Fogo Padrão"
-    Avatar[0].Magia3 = Magia3.value || "Bola de Fogo Padrão"
-    Avatar[0].Magia4 = Magia4.value || "Bola de Fogo Padrão"
-    Avatar[0].Skill = Skill.value || "Nenhuma Skill"
+    Avatar.Arma = Arma.value || "Espada de Madeira"
+    Avatar.Equipamento = Equipamento.value || "Elmo de Madeira"
+    Avatar.Forma = Forma.value || "Nenhuma Forma"
+    Avatar.LVL = "0" || "0"
+    Avatar.Laço = Laços.value || "Nenhum Laço"
+    Avatar.Magia1 = Magia1.value || "Bola de Fogo Padrão"
+    Avatar.Magia2 = Magia2.value || "Bola de Fogo Padrão"
+    Avatar.Magia3 = Magia3.value || "Bola de Fogo Padrão"
+    Avatar.Magia4 = Magia4.value || "Bola de Fogo Padrão"
+    Avatar.Skill = Skill.value || "Nenhuma Skill"
     localStorage.Avatar = JSON.stringify(Avatar)
 }
 

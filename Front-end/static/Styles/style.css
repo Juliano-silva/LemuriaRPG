@@ -424,6 +424,10 @@ option {
 #Inputs > label > h4{
     margin-top: 2vh;
 }
+#Inputs > label > select{
+    width: 40vh;
+    margin-top: 0.5vh;
+}
 
 #ContainerChild{
     padding: 0.5vh;

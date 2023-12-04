@@ -3,7 +3,7 @@ if (localStorage.Configuration) {
 } else {
     var array = ({
         "Backgrounds": [],
-        "Stage": [],
+        "Stage": 0,
         "EscolhaBK": [],
         "Fazenda": []
     })
