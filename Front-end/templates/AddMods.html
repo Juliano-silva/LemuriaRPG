@@ -8,24 +8,32 @@
     <link rel="stylesheet" href="../static/Styles/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body>
+<body id="AddBody">
     <button id="Add_Button">+</button>
     <div id="Adicionar_Conteudo">
-        <input type="text" id="UrlImg" placeholder="Adicionar Background">
-        <button onclick="SalvarURL()">Baixar</button>
-        <form action="/SpriteAdd" method="post" enctype="multipart/form-data">
-            <input type="file" accept="image/*" id="AddSprites" name="AddSprites">
-            <button>Enviar</button>
-        </form>
-        <form action="/CenarioAdd" method="post" enctype="multipart/form-data">
-            <input type="file" accept="image/*" id="CenarioAdd" name="CenarioAdd">
-            <button>Enviar</button>
-        </form>
-        <form action="/MusicAdd" method="post" enctype="multipart/form-data">
-            <input type="file" accept="audio/*" id="MusicAdd" name="MusicAdd">
-            <button>Enviar</button>
-        </form>
+        <select id="Escolha_Add" onchange="Escolhas()">
+            <option value="Background">Adicionar Background</option>
+            <option value="Sprites">Adicionar Sprites</option>
+            <option value="Cenário">Adicionar Cenário</option>
+            <option value="Music">Adicionar Músicas</option>
+        </select>
+        <div id="Add_Inputs">
+            <div id="Background_Input" style="display: block;">
+                <input type="text" id="UrlImg" placeholder="Adicionar Background">
+            </div>
+            <form action="/SpriteAdd" id="Sprite_Input" method="post" enctype="multipart/form-data">
+                <input type="file" accept="image/*" id="AddSprites" name="AddSprites">
+            </form>
+            <form action="/CenarioAdd" id="Cenario_Input" method="post" enctype="multipart/form-data">
+                <input type="file" accept="image/*" id="CenarioAdd" name="CenarioAdd">
+            </form>
+            <form action="/MusicAdd" id="Music_Input" method="post" enctype="multipart/form-data">
+                <input type="file" accept="audio/*" id="MusicAdd" name="MusicAdd">
+            </form>
+            <button onclick="SalvarURL()">Enviar</button>
+        </div>
     </div>
+    <h1 id="TituloAdd">Escolha Aqui seu Background</h1>
     <div id="Conteudo"></div>
 </body>
 <script src="../static/Scripts/Mods.js"></script>

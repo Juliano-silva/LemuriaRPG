@@ -6,10 +6,12 @@ function Set() {
         const Container = `
         <div id='Container'>
         <img src='${Avatar.ImagePersonagem}'/>
+        <div id='ContainerChild'>
         <h3>${Avatar.Name}</h3>
         <h3>${Avatar.Sintonia}</h3>
         <h4>${Avatar.Dinheiro}</h4>
         <h2>Lvl 0</h2>
+        </div>
         <div>
         <div id='CreateSelect'></div>
         </div>
@@ -20,39 +22,39 @@ function Set() {
 }
 
 
-if(localStorage.Shop){
+if (localStorage.Shop) {
     var BuscarJson = JSON.parse(localStorage.getItem("Shop"))
-for (var i = 0; i < BuscarJson.length; i++) {
-    var Opt = document.createElement("option")
-    Opt.innerText = BuscarJson[i].Name
-    if (BuscarJson[i].Category == "Arma") {
-        document.getElementById("Arma").append(Opt)
-    }
-
-    if (BuscarJson[i].Category == "Equipamento") {
-        document.getElementById("Equipamento").append(Opt)
-    }
-
-    if (BuscarJson[i].Category == "Skill") {
-        document.getElementById("Skill").append(Opt)
-    }
-
-    if (BuscarJson[i].Category == "Forma") {
-        document.getElementById("Forma").append(Opt)
-    }
-
-    if (BuscarJson[i].Category == "Magia") {
+    for (var i = 0; i < BuscarJson.length; i++) {
         var Opt = document.createElement("option")
-        var Opt1 = document.createElement("option")
-        var Opt2 = document.createElement("option")
-        var Opt3 = document.createElement("option")
-        Opt.innerText = Opt2.innerText = Opt3.innerText = Opt1.innerText = BuscarJson[i].Name
-        document.getElementById('Magia1').append(Opt)
-        document.getElementById('Magia2').append(Opt1)
-        document.getElementById('Magia3').append(Opt2)
-        document.getElementById('Magia4').append(Opt3)
+        Opt.innerText = BuscarJson[i].Name
+        if (BuscarJson[i].Category == "Arma") {
+            document.getElementById("Arma").append(Opt)
+        }
+
+        if (BuscarJson[i].Category == "Equipamento") {
+            document.getElementById("Equipamento").append(Opt)
+        }
+
+        if (BuscarJson[i].Category == "Skill") {
+            document.getElementById("Skill").append(Opt)
+        }
+
+        if (BuscarJson[i].Category == "Forma") {
+            document.getElementById("Forma").append(Opt)
+        }
+
+        if (BuscarJson[i].Category == "Magia") {
+            var Opt = document.createElement("option")
+            var Opt1 = document.createElement("option")
+            var Opt2 = document.createElement("option")
+            var Opt3 = document.createElement("option")
+            Opt.innerText = Opt2.innerText = Opt3.innerText = Opt1.innerText = BuscarJson[i].Name
+            document.getElementById('Magia1').append(Opt)
+            document.getElementById('Magia2').append(Opt1)
+            document.getElementById('Magia3').append(Opt2)
+            document.getElementById('Magia4').append(Opt3)
+        }
     }
-}
 
 }
 if (localStorage.Laço) {
@@ -92,6 +94,7 @@ function Add() {
         "Forma": [],
         "AvatarAtributos": [],
         "LVL": [],
+        "Point_Lvl": [],
         "LVLATRIBUTE": [],
         "Dinheiro": []
     })
@@ -99,10 +102,13 @@ function Add() {
     localStorage.Avatar = JSON.stringify(array)
 }
 
+
+
 function ContadorPoint() {
     fetch("/Data").then((response) => {
         response.json().then((data) => {
             Point--
+            document.getElementById("Points").innerText = Point
             if (Point < 0) {
                 return false
             }
@@ -110,11 +116,13 @@ function ContadorPoint() {
             var Create = document.createElement("h1")
             Create.id = ID
             Create.innerText = ID
+            var DadosList = []
             document.getElementById("Criar").append(Create)
             var Criar = document.getElementById("Criar")
             var Avatar = JSON.parse(localStorage.getItem("Avatar"))
             for (var i = 0; i < data.Status.length; i++) {
-                Avatar.AvatarAtributos?.push(data.Status[i] + " " + Criar.querySelectorAll("#" + data.Status[i]).length)
+                DadosList.push(data.Status[i] + " " + Criar.querySelectorAll("#" + data.Status[i]).length)
+                Avatar.AvatarAtributos = DadosList
                 Avatar.Dinheiro = "500"
             }
             document.getElementById("Salvar").addEventListener("click", function () {
@@ -135,8 +143,14 @@ function SintoniaFunc() {
             }
         })
     })
-    var Avatar = JSON.parse(localStorage.getItem("Avatar"))
-    document.getElementById("Atributos").innerHTML = Avatar.AvatarAtributos
+    if(localStorage.Avatar){
+        var Avatar = JSON.parse(localStorage.getItem("Avatar"))
+        for(var i  = 0; i< Avatar.AvatarAtributos.length; i++){
+            var Name = document.createElement("h4")
+            Name.innerText = Avatar.AvatarAtributos[i]
+            document.getElementById("Atributos").append(Name)
+        }
+    }
 }
 
 function ItensSalvos() {
@@ -160,7 +174,7 @@ function LVLATRIBUTE() {
         var AvatarInt = String(Avatar.AvatarAtributos).replace(/([^\d])+/gim, "")
         Avatar.LVLATRIBUTE = ({
             "LifeMax": (AvatarInt[0] * 10) + (AvatarInt[7] * 10) + (AvatarInt[2] * 10) / 2,
-            "Ataque": (AvatarInt[0] * 10) + (AvatarInt[1] * 10)  / 2,
+            "Ataque": (AvatarInt[0] * 10) + (AvatarInt[1] * 10) / 2,
             "Defesa": (AvatarInt[2] * 10) + (AvatarInt[4] * 10) / 2,
             "ManaMax": (AvatarInt[6] * 10) + (AvatarInt[3] * 10) + (AvatarInt[5] * 10) / 2
         })

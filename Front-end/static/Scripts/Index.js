@@ -1,7 +1,15 @@
 function Load() {
-    var EscolhaBK = localStorage.getItem("Config")
+    var EscolhaBK = JSON.parse(localStorage.getItem("Configuration")).EscolhaBK
     document.querySelector("body").style.backgroundImage = EscolhaBK
 }
+
+
+if(localStorage.Avatar){
+    console.log("Nada");
+}else{
+    document.getElementById("BtnSidebarAbir").style.display = "none"
+}
+
 
 document.getElementById("BtnSidebarFechar").addEventListener("click",function(){
     document.getElementById("Sidebar").style.display = "none"

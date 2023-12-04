@@ -1,18 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
 }
 
+/* Cores */
+#Nada {
+    color: #7A6F46;
+    color: #434CA5;
+    color: #FAC611;
+    color: #BA9F3C;
+    color: #1127FA;
+}
+
+/* Padrão Site */
 body {
     color: white;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    font-family: 'Raleway', sans-serif;
 }
 
 body::-webkit-scrollbar {
     width: 0px;
 }
+
 
 button,
 input,
@@ -20,23 +37,45 @@ textarea {
     all: unset;
     display: block;
     margin: auto;
-    border: 0.2vh solid yellow;
+    border: 0.4vh solid #FAC611;
     padding: 2vh;
     font-size: 2vh;
     width: 10%;
     text-align: center;
-    border-radius: 2vh;
+    border-radius: 0.6vh;
     margin-top: 1vh;
-    background-color: rgb(41, 21, 7);
+    background-color: #434CA5;
+    color: #FAC611;
 }
 
 input,
 textarea {
-    width: 30%;
+    width: 60%;
+}
+
+select {
+    all: unset;
+    display: block;
+    text-align: center;
+    margin: auto;
+    border: 0.5vh solid #FAC611;
+    font-size: 3vh;
+    width: 20%;
+    cursor: pointer;
+    padding: 0.8vh;
+    background-color: #1127FA;
+    color: #FAC611;
+    border-radius: 0.6vh;
+}
+
+
+option {
+    background-color: #434CA5;
+    color: #FAC611;
 }
 
 ::placeholder {
-    color: white;
+    color: #FAC611;
 }
 
 #Adicionar_Conteudo {
@@ -53,10 +92,18 @@ textarea {
     overflow: auto;
     height: 100%;
     z-index: 2;
+    padding: 2vh;
 }
 
 #Adicionar_ConteudoAparecer::-webkit-scrollbar {
     width: 0px;
+}
+
+#Sprite_Input,
+#Background_Input,
+#Cenario_Input,
+#Music_Input {
+    display: none;
 }
 
 #Add_Button {
@@ -82,6 +129,8 @@ textarea {
     font-style: oblique;
 }
 
+
+
 /* Batalha */
 .Container {
     display: flex;
@@ -96,13 +145,6 @@ textarea {
     height: 100vh;
 }
 
-.Personagem:nth-child(1){
-    background-color: red;
-}
-
-.Personagem:nth-child(2){
-    background-color: blue;
-}
 #Começar {
     border: 0.2vh solid white;
     background-color: red;
@@ -124,10 +166,37 @@ textarea {
     height: 70vh;
 }
 
-#Buttons_Container, #Magics{
+#Buttons_Container,
+#Magics {
     display: flex;
     align-content: center;
     justify-content: center;
+}
+
+:is(#Buttons_Container,#Magics) > button{
+    background-color: #1127FA;
+    cursor: pointer;
+    border-radius:25%;
+}
+
+:is(#Buttons_Container,#Magics) > button:hover {
+    background-color: #434CA5;
+}
+
+#Laço{
+    position: absolute;
+    margin-top: -40vh;
+}
+#Laço > img{
+    width: 35vh;
+    height: 35vh;
+}
+#Stages{
+    text-align: center;
+    background-color: #434CA5;
+    color: #FAC611;
+    padding: 2vh;
+    font-size: 6vh
 }
 
 
@@ -146,6 +215,34 @@ textarea {
     margin: auto;
 }
 
+#Created {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#Fazenda_Diva {
+    border: 0.2vh solid transparent;
+    width: 40vh;
+    height: 40vh;
+    padding: 2vh;
+    margin-top: 2vh;
+    margin-left: 2vh;
+    color: #FAC611;
+    text-shadow: 0.2vh 0.2vh 0.2vh #1127FA;
+    text-align: center;
+    font-size: 1.7vh;
+}
+
+#Fazenda_Diva>img {
+    width: 100%;
+    height: 40vh;
+    border-radius: 50%;
+}
+
+#Fazenda_Diva>h1 {
+    font-size: 3vh;
+}
+
 .FazendaBtn {
     all: unset;
     border: 0.2vh solid transparent;
@@ -162,65 +259,135 @@ textarea {
     display: none;
 }
 
-#Created {
-    margin-top: 10vh;
-}
-
 /* Shop */
 #BuscarBody {
     display: flex;
-    align-items: center;
+    flex-flow: row wrap;
     margin-top: 2vh;
+    border: 0.1vh solid transparent;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+#BuscarBody::-webkit-scrollbar {
+    width: 0px;
 }
 
 #Caixa {
-    border: 0.2vh solid goldenrod;
+    border: 0.3vh solid #BA9F3C;
     background-image: url('../files/BackgroundShop.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 55vh;
-    height: 45vh;
-    margin-left: 1vh;
+    width: 45vh;
+    height: 48vh;
+    margin-left: 0.7vh;
     padding: 2vh;
-    color: goldenrod;
-    text-shadow: 0.1vh 0.1vh 0.1vh gold;
+    color: #FAC611;
+    text-shadow: 0.1vh 0.1vh 0.1vh #BA9F3C;
+    margin-top: 2vh;
+    border-radius: 2vh;
 }
 
 #Caixa>img {
     width: 40%;
     height: 40%;
-    border: 0.4vh solid goldenrod;
-    margin-left: 2vh;
+    border: 0.4vh solid #FAC611;
+    margin-left: 1vh;
     z-index: 0;
+    margin-top: 2vh;
+}
+
+#OutDiv {
+    margin-top: 0.2vh;
+    padding: 0.2vh;
+    overflow: auto;
+    font-size: 2vh;
+    height: 13vh;
+}
+
+#OutDiv>h1 {
+    font-size: 5vh;
+}
+
+#OutDiv::-webkit-scrollbar {
+    width: 0px;
+}
+
+#Caixa>button {
+    margin-top: 2vh;
+    width: 20%;
+    border-radius: 2vh;
+}
+
+#Caixa>h6 {
+    font-size: 3vh;
+}
+
+#Caixa>button:hover {
+    background-color: #1127FA;
+    cursor: pointer;
+}
+
+#Dinheiro,
+#Components {
+    color: greenyellow;
+    font-size: 5vh;
 }
 
 /* Add mods */
+
+#TituloAdd,#PersonagemName,#Personagem,#ContainerChild,#Atributos > h4{
+    color: #FAC611;
+    text-shadow: 0.1vh 0.1vh 0.1vh #434CA5;
+    font-size: 4vh;
+    font-style: oblique;
+}
+
 #Conteudo {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
     border: 0.2vh solid transparent;
     width: 100%;
+    margin-top: 2vh;
 }
 
-#Criar>h1 {
-    /* display: none; */
+#AddBody,
+#ShopBody {
+    padding: 2vh;
 }
 
 #Conteudo>img {
     width: 45vh;
     height: 45vh;
     cursor: pointer;
-    margin-top: 0.5vh;
-    margin-left: 0.2vh;
+    margin-top: 2vh;
+    margin-left: 4vh;
+    border-radius: 5vh;
 }
 
 /* Home */
 #Container {
-    border: 0.2vh solid white;
     display: flex;
     flex-flow: row wrap;
+}
+
+#Add_ButtonDiv {
+    background-color: #0C0101;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    position: fixed;
+}
+
+#Add_ButtonDiv>h1 {
+    font-size: 10vh;
+    text-transform: uppercase;
 }
 
 #Container>label {
@@ -229,18 +396,49 @@ textarea {
 
 #Container>img {
     justify-content: left;
+    height: 100vh;
+    width: 80vh;
 }
 
 #Inputs {
     border: 0.2vh solid transparent;
+    width:30%;
     position: absolute;
     top: 0;
-    margin-left: 75vh;
-    margin-top: 5vh;
-    width: 80%;
+    right: 0;
+    overflow: auto;
+    height:100vh;
+}
+
+#Inputs::-webkit-scrollbar{
+    width: 0px;
 }
 
 #Inputs>label {
+    font-size: 5vh;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+}
+
+#Inputs > label > h4{
+    margin-top: 2vh;
+}
+
+#ContainerChild{
+    padding: 0.5vh;
+    font-size: 3vh;
+}
+
+#Atributos{
+    border: 0.2vh solid transparent;
+    position: absolute;
+    top: 0;
+    margin-left: 80vh;
+    text-align: left;
+    margin-top: 18vh;
+}
+
+#Atributos > h4{
     display: block;
-    margin-left: 2vh;
 }

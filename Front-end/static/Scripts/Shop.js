@@ -28,16 +28,18 @@ function ContadorPoint() {
         response.json().then((data) => {
             var ID = this.id
             var Listar = []
+            var Quantidade = parseInt(JSON.parse(localStorage.getItem("Shop")).length)
             var Create = document.createElement("h1")
             Create.id = ID
             Create.innerText = ID
             document.getElementById("Criar").append(Create)
             var Criar = document.getElementById("Criar")
-            Add = JSON.parse(localStorage.getItem("Shop"))
+            var Shop = JSON.parse(localStorage.getItem("Shop"))
             for (var i = 0; i < data.Status.length; i++) {
                 Listar.push(data.Status[i] + " " + Criar.querySelectorAll("#" + data.Status[i]).length)
             }
-            localStorage.setItem("Dados",JSON.stringify(Listar))
+            Shop[Quantidade].Requerimentos = Listar
+            localStorage.Shop = JSON.stringify(Shop)
         })
     })
 }
@@ -50,7 +52,7 @@ function Salvar() {
     Loja.push({
         "Name": document.getElementById("Name").value,
         "Description": document.getElementById("Description").value,
-        "Requerimentos": JSON.parse(localStorage.getItem("Dados")),
+        "Requerimentos": [],
         "Image": document.getElementById("Image").value,
         "Preco": document.getElementById("Preco").value,
         "Category": document.getElementById("Selecionar").value,
@@ -67,6 +69,7 @@ function Rodar() {
         var BuscarJs = JSON.parse(localStorage.getItem("Shop"))
         for (var i = 0; i < BuscarJs.length; i++) {
             var Div = document.createElement("div")
+            var OutDiv = document.createElement("div")
             var ItensH6 = document.createElement("h6")
             var Name = document.createElement("h1")
             var Texto = document.createElement("p")
@@ -85,14 +88,16 @@ function Rodar() {
             Name.innerText = BuscarJs[i].Name
             Div.id = "Caixa"
             ItensH6.innerText =  BuscarJs[i].Category || "Itens"
-            Texto.innerText = BuscarJs[i].Description
+            Texto.innerText = "Description: " + BuscarJs[i].Description
             Image.src = BuscarJs[i].Image
             Preco.innerText = "Preço: " + BuscarJs[i].Preco
             Comprar.innerText = "Comprar"
             Comprar.id = i
             Comprar.onclick = ComprarFunction
             Req.innerText = "Requerimentos: " +  somarShop
-            Div.append(ItensH6, Image, Name, Texto, Preco , Req, Comprar)
+            OutDiv.id = "OutDiv"
+            OutDiv.append(Name, Texto, Preco , Req)
+            Div.append(ItensH6, Image,OutDiv,Comprar)
             document.getElementById("BuscarBody").append(Div)
         }
     }
@@ -111,8 +116,9 @@ function ComprarFunction() {
     var MyComponents = parseInt(document.getElementById("Components").innerText)
     if (BuscarJs[this.id].Preco < MyMoney && BuscarJs[this.id].RequerimentosSoma < MyComponents) {
         Buscar.Itens?.push(BuscarJs[this.id].Name)
-        console.log("Comprar");
+        Buscar.Dinheiro = MyMoney - BuscarJs[this.id].Preco 
         localStorage.Avatar = JSON.stringify(Buscar)
+        console.log("Comprar");
     } else {
         console.log("Não Tem dinheiro");
     }
