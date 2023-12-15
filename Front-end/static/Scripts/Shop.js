@@ -28,7 +28,7 @@ function ContadorPoint() {
         response.json().then((data) => {
             var ID = this.id
             var Listar = []
-            var Quantidade = parseInt(JSON.parse(localStorage.getItem("Shop")).length)
+            var Quantidade = parseInt(JSON.parse(localStorage.getItem("Shop")).length) - 1
             var Create = document.createElement("h1")
             Create.id = ID
             Create.innerText = ID

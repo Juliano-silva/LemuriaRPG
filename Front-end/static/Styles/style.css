@@ -55,7 +55,9 @@ textarea {
 
 select {
     all: unset;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     margin: auto;
     border: 0.5vh solid #FAC611;
@@ -173,25 +175,27 @@ option {
     justify-content: center;
 }
 
-:is(#Buttons_Container,#Magics) > button{
+:is(#Buttons_Container, #Magics)>button {
     background-color: #1127FA;
     cursor: pointer;
-    border-radius:25%;
+    border-radius: 25%;
 }
 
-:is(#Buttons_Container,#Magics) > button:hover {
+:is(#Buttons_Container, #Magics)>button:hover {
     background-color: #434CA5;
 }
 
-#Laço{
+#Laço {
     position: absolute;
     margin-top: -40vh;
 }
-#Laço > img{
+
+#Laço>img {
     width: 35vh;
     height: 35vh;
 }
-#Stages{
+
+#Stages {
     text-align: center;
     background-color: #434CA5;
     color: #FAC611;
@@ -259,6 +263,27 @@ option {
     display: none;
 }
 
+#StatusPet{
+    border: 0.2vh solid #FAC611;
+    background-color: #434CA5;
+    color: rgb(230, 217, 217);
+    height: 80vh;
+    width: 60vh;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 2vh;
+    display: none;
+    border-radius: 2vh;
+}
+
+#StatusPet > img{
+    width: 100%;
+    height: 50vh;
+}
 /* Shop */
 #BuscarBody {
     display: flex;
@@ -338,7 +363,12 @@ option {
 
 /* Add mods */
 
-#TituloAdd,#PersonagemName,#Personagem,#ContainerChild,#Atributos > h4{
+#TituloAdd,
+#PersonagemName,
+#Personagem,
+#ContainerChild,
+#Atributos>h4,
+#Container > h3{
     color: #FAC611;
     text-shadow: 0.1vh 0.1vh 0.1vh #434CA5;
     font-size: 4vh;
@@ -353,6 +383,12 @@ option {
     margin-top: 2vh;
 }
 
+#Container > h3{
+    margin-top: 1.5vh;
+    font-size: 8vh;
+    text-transform: uppercase;
+    padding-left: 5vh;
+}
 #AddBody,
 #ShopBody {
     padding: 2vh;
@@ -368,9 +404,8 @@ option {
 }
 
 /* Home */
-#Container {
-    display: flex;
-    flex-flow: row wrap;
+#Home{
+    overflow: hidden;
 }
 
 #Add_ButtonDiv {
@@ -394,55 +429,113 @@ option {
     display: block;
 }
 
-#Container>img {
-    justify-content: left;
-    height: 100vh;
-    width: 80vh;
-}
-
 #Inputs {
     border: 0.2vh solid transparent;
-    width:30%;
+    width: 30%;
     position: absolute;
     top: 0;
     right: 0;
     overflow: auto;
-    height:100vh;
+    height: 100vh;
+    z-index: -2;
 }
 
-#Inputs::-webkit-scrollbar{
+#Inputs::-webkit-scrollbar {
     width: 0px;
 }
 
-#Inputs>label {
+#Inputs1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 12vh;
+    margin-left: 85vh;
+}
+
+#Inputs2 {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-top: 12vh;
+    margin-right: 20vh;
+}
+
+#Inputs1>select,
+#Inputs2>select {
+    width: 40vh;
+    margin-top: 2vh;
+    height: 10vh;
+    border-radius: 2vh;
+    background-color: #0C0101;
+}
+
+#ContainerChild {
+    padding: 0.5vh;
     font-size: 5vh;
-    justify-content: center;
-    margin: auto;
     text-align: center;
 }
 
-#Inputs > label > h4{
-    margin-top: 2vh;
-}
-#Inputs > label > select{
-    width: 40vh;
-    margin-top: 0.5vh;
+#Atributos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    margin-top: 25vh;
+    width: 100%;
 }
 
-#ContainerChild{
-    padding: 0.5vh;
-    font-size: 3vh;
+
+#ContainerChild>h3{
+    padding: 1vh;
+    font-size: 10vh;
+}
+
+#KeyBtn{
+    position: fixed;
+    top: 0;
+    cursor: pointer;
+    width:2vh;
+    margin-top: 0;
+    background-color: #0C0101;
+}
+
+#Container>img {
+    height: 100%;
+    width: 75vh;
+    border-radius:1vh;
+    border-end-end-radius: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#Status{
+    background: linear-gradient(135deg , rgba(255,255,255,0.1),rgba(255,255,255,0));
+    backdrop-filter: blur(1vh);
+    -webkit-backdrop-filter: blur(8vh);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+    text-align: center;
+    padding: 2vh;
+    display: none;
 }
 
 #Atributos{
-    border: 0.2vh solid transparent;
-    position: absolute;
-    top: 0;
-    margin-left: 80vh;
-    text-align: left;
-    margin-top: 18vh;
+    text-align: center;
+    width: 100%;
 }
 
-#Atributos > h4{
-    display: block;
+#ItensSalvos{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+#Container > h3{
+    text-align: center;
 }

@@ -12,6 +12,9 @@ function SalvarURL() {
     if(document.getElementById("CenarioAdd").value){
         document.getElementById("Cenario_Input").submit()
     }
+    if(document.getElementById("AddEnimies").value){
+        document.getElementById("EnimiesAdd").submit()
+    }
     if(document.getElementById("MusicAdd").value){
         document.getElementById("Music_Input").submit()
     }

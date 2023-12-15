@@ -1,4 +1,5 @@
 var Point = 15
+
 function Set() {
     if (localStorage.Avatar) {
         var Avatar = JSON.parse(localStorage.getItem("Avatar"))
@@ -6,14 +7,14 @@ function Set() {
         const Container = `
         <div id='Container'>
         <img src='${Avatar.ImagePersonagem}'/>
+        <h3>${Avatar.Name} Lvl 0</h3>
+        <div id='Status'>
         <div id='ContainerChild'>
-        <h3>${Avatar.Name}</h3>
         <h3>${Avatar.Sintonia}</h3>
-        <h4>${Avatar.Dinheiro}</h4>
-        <h2>Lvl 0</h2>
+        <div id="Atributos"></div>
+        <h4>R$ ${Avatar.Dinheiro}</h4>
+        <div id='CreateSelect'></div> 
         </div>
-        <div>
-        <div id='CreateSelect'></div>
         </div>
         `
         Diva.innerHTML = Container
@@ -21,6 +22,15 @@ function Set() {
     }
 }
 
+document.getElementById("Home").addEventListener("keypress",function(evento){
+    if(evento.code == "KeyI"){
+        document.getElementById("Status").style.display = "block"
+    }
+})
+
+document.getElementById("KeyBtn").addEventListener("click",function(){
+    document.getElementById("Status").style.display = "block"
+})
 
 if (localStorage.Shop) {
     var BuscarJson = JSON.parse(localStorage.getItem("Shop"))
@@ -42,6 +52,7 @@ if (localStorage.Shop) {
         if (BuscarJson[i].Category == "Forma") {
             document.getElementById("Forma").append(Opt)
         }
+
 
         if (BuscarJson[i].Category == "Magia") {
             var Opt = document.createElement("option")
@@ -143,9 +154,9 @@ function SintoniaFunc() {
             }
         })
     })
-    if(localStorage.Avatar){
+    if (localStorage.Avatar) {
         var Avatar = JSON.parse(localStorage.getItem("Avatar"))
-        for(var i  = 0; i< Avatar.AvatarAtributos.length; i++){
+        for (var i = 0; i < Avatar.AvatarAtributos.length; i++) {
             var Name = document.createElement("h4")
             Name.innerText = Avatar.AvatarAtributos[i]
             document.getElementById("Atributos").append(Name)

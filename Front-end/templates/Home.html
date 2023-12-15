@@ -7,8 +7,8 @@
     <title>Home</title>
     <link rel="stylesheet" href="../static/Styles/style.css">
 </head>
-
-<body>
+<body id="Home">
+    <button id="KeyBtn">I</button>
     <div id="Add_ButtonDiv">
         <h1>Criar seu Personagem</h1>
     </div>
@@ -23,19 +23,38 @@
         <button onclick="Add()">Adicionar</button>
     </div>
     <div id="Set_Create"></div>
-    <div id="Inputs">
-        <label><h4>Laço: </h4><select id="Laços"></select></label>
-        <label><h4>Armas:</h4> <select id="Arma"></select></label>
-        <label><h4>Magia 1: </h4><select id="Magia1"></select></label>
-        <label><h4>Magia 2: </h4><select id="Magia2"></select></label>
-        <label><h4>Magia 3: </h4><select id="Magia3"></select></label> 
-        <label><h4>Magia 4: </h4><select id="Magia4"></select></label> 
-        <label><h4>Equipamento: </h4><select id="Equipamento"></select></label> 
-        <label><h4>Skill: </h4><select id="Skill"></select></label>
-        <label><h4>Forma: </h4><select id="Forma"></select></label> 
-        <button onclick="ItensSalvos()">Salvar</button>
+    <div id="Inputs1">
+        <select id="Magia1">
+            <option value="Magic1">Magic 1</option>
+        </select>
+        <select id="Magia2">
+            <option value="Magic2">Magic 2</option>
+        </select>
+        <select id="Magia3">
+            <option value="Magic3">Magic 3</option>
+        </select> 
+        <select id="Magia4">
+            <option value="Magic4">Magic 4</option>
+        </select> 
     </div>
-    <div id="Atributos"></div>
+    <div id="Inputs2">
+        <select id="Arma">
+            <option value="Arma">Arma</option>
+        </select>
+        <select id="Equipamento">
+            <option value="Equipamento">Equipamento</option>
+        </select> 
+        <select id="Skill">
+            <option value="Skill">Skill</option>
+        </select>
+        <select id="Forma">
+            <option value="Forma">Forma</option>
+        </select> 
+        <select id="Laços">
+            <option value="Laço">Laço</option>
+        </select>
+    </div>
+    <button id="ItensSalvos" onclick="ItensSalvos()">Salvar</button>
 </body>
 </div>
 <script src="../static/Scripts/Home.js"></script>
