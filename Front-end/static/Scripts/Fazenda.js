@@ -87,7 +87,7 @@ function Rodar() {
             <h2>${Buscar[this.className].Atributo}</h2>
             <div id='RequerimentosFazenda'></div>
             <select id='AddComida'></select>
-            <button id='Comendo' class='${this.className}'>Comer <span id='FoodChoice'></span></button>
+            <button id='Comendo' class='${this.className}'>Comer </button>
             <button>Dormir</button>
             `
             var Req = `

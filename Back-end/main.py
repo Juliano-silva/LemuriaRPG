@@ -23,6 +23,7 @@ def index():
 @app.route("/Home", methods=['GET', 'POST'])
 def home():
     return render_template("Home.html")
+    # return render_template("Batalhas.html")
 
 
 @app.route("/Batalhas", methods=['GET', 'POST'])

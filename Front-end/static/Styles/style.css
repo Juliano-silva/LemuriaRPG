@@ -165,7 +165,7 @@ option {
 
 .Personagem>img {
     width: 100%;
-    height: 70vh;
+    height: 80vh;
 }
 
 #Buttons_Container,
@@ -237,6 +237,11 @@ option {
     font-size: 1.7vh;
 }
 
+#AddComida{
+    position: absolute;
+    margin-top: -20vh;
+    margin-left: 20vh;
+}
 #Fazenda_Diva>img {
     width: 100%;
     height: 40vh;
